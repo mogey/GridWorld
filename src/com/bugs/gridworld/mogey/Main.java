@@ -17,6 +17,7 @@
  */
 package com.bugs.gridworld.mogey;
 import info.gridworld.actor.ActorWorld;
+import info.gridworld.actor.Critter;
 import info.gridworld.actor.Rock;
 import info.gridworld.grid.Location;
 
@@ -31,16 +32,7 @@ public class Main
     public static void main(String[] args)
     {
         ActorWorld world = new ActorWorld();
-        Rock rocky = new Rock();
-        NSEWBug nsew = new NSEWBug();
-        world.add(nsew);
-        FlowerBug bab = new FlowerBug();
-        world.add(new Location(7,9), rocky);
-        world.add(bab);
-        BattleBug a = new BattleBug();
-        BattleBug b = new BattleBug();
-        world.add(new Location(2,2), a);
-        world.add(new Location(2,3), b);
+        world.add(new SlowBug());
         world.show();
     }
 }
