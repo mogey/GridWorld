@@ -28,6 +28,8 @@ public class WarpBug extends Bug{
                     System.out.println("Warpbug died");
                 }
                 warp();
+            }else{
+                warps = 0;
             }
         }
         if(canMove())
