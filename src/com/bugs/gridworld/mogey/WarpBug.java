@@ -33,7 +33,7 @@ public class WarpBug extends Bug{
         if(canMove())
             move();
         else {
-            setDirection(rnd.nextInt(366));
+            setDirection(rnd.nextInt(360));
         }
     }
     private void warp(){

@@ -32,6 +32,7 @@ public class Main
     public static void main(String[] args)
     {
         ActorWorld world = new ActorWorld();
+        world.add(new FastBug());
         world.add(new SlowBug());
         world.show();
     }
