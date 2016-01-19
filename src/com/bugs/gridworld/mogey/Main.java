@@ -35,7 +35,7 @@ public class Main
         world.add(new FastBug());
         world.add(new SlowBug());
         world.add(new WarpBug(Color.magenta));
-        world.add(new Critter());
+        world.add(new ChameleonKid());
         world.show();
     }
 }
