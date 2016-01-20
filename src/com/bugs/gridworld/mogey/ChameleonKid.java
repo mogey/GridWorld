@@ -6,7 +6,7 @@ import info.gridworld.grid.Grid;
 import info.gridworld.grid.Location;
 
 /**
- * Copyright RC created on 1/19/2016 for bugs
+ * Copyright Ricky Cordero created on 1/19/2016 for bugs
  * com.bugs.gridworld.mogey
  *
  * A ChameleonKid changes its color to the color

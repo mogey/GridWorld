@@ -32,10 +32,11 @@ public class Main
     public static void main(String[] args)
     {
         ActorWorld world = new ActorWorld();
-        world.add(new FastBug());
-        world.add(new SlowBug());
-        world.add(new WarpBug(Color.magenta));
-        world.add(new ChameleonKid());
+        world.add(new ChameleonCritter());
+        world.add(new FadedBug());
+        world.add(new FadedBug());
+        world.add(new FadedBug());
+        world.add(new FadedBug());
         world.show();
     }
 }
