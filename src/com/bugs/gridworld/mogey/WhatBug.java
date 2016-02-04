@@ -12,7 +12,7 @@ import java.util.ArrayList;
  * Copyright Mohsin created on 1/20/2016 for bugs
  * com.bugs.gridworld.mogey
  */
-public class FadedBug extends FastBug{
+public class WhatBug extends FastBug{
     ArrayList<Location> occupiedLocations;
     private Grid<Actor> gr;
     public void move()

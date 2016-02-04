@@ -1,7 +1,6 @@
 package com.bugs.gridworld.mogey;
 
 import info.gridworld.actor.Actor;
-import info.gridworld.actor.Flower;
 import info.gridworld.grid.Grid;
 import info.gridworld.grid.Location;
 
@@ -12,9 +11,9 @@ import info.gridworld.grid.Location;
  * A ChameleonKid changes its color to the color
  * of one of the actors immediately in front or behind.
  * If there is no actor in either of these locations,
- * then the ChameleonKid darkens like the modified ChameleonCritter.
+ * then the ChameleonKid darkens like the modified ChameleonCritter2.
  */
-public class ChameleonKid extends ChameleonCritter{
+public class ChameleonKid extends ChameleonCritter2 {
     public ChameleonKid(){}
         public void move() {
             Grid<Actor> gr = getGrid();
