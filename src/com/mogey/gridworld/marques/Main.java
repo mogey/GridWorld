@@ -15,11 +15,9 @@
  * @author Chris Nevison
  * @author Barbara Cloud Wells
  */
-package com.bugs.gridworld.mogey;
+package com.mogey.gridworld.marques;
 import info.gridworld.actor.ActorWorld;
 import info.gridworld.actor.Rock;
-
-import java.awt.*;
 
 /**
  * This class runs a world that contains box bugs. <br />

@@ -1,4 +1,4 @@
-package com.bugs.gridworld.mogey;
+package com.mogey.gridworld.marques;
 
 import info.gridworld.actor.Actor;
 import info.gridworld.actor.Critter;

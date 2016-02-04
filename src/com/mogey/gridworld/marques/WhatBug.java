@@ -1,10 +1,9 @@
-package com.bugs.gridworld.mogey;
+package com.mogey.gridworld.marques;
 
 import info.gridworld.actor.Actor;
 import info.gridworld.actor.Flower;
 import info.gridworld.grid.Grid;
 import info.gridworld.grid.Location;
-import javafx.scene.paint.Color;
 
 import java.util.ArrayList;
 
