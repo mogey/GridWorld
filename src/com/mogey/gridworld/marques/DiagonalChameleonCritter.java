@@ -13,18 +13,49 @@ public class DiagonalChameleonCritter extends ChameleonCritter2{
     public ArrayList<Actor> getActors()
     {
         ArrayList<Actor> actors = new ArrayList<Actor>();
-        //Calc upleft
-        if ((getGrid().get(new Location(getLocation().getRow()-1,getLocation().getCol()-1)) instanceof Actor))
-            actors.add(getGrid().get(new Location(getLocation().getRow()-1,getLocation().getCol()-1)));
-        //Calcs  upright
-        if ((getGrid().get(new Location(getLocation().getRow()-1,getLocation().getCol()+1)) instanceof Actor))
-            actors.add(getGrid().get(new Location(getLocation().getRow()-1,getLocation().getCol()+1)));
-        //calcs downleft
-        if ((getGrid().get(new Location(getLocation().getRow()+1,getLocation().getCol()+1)) instanceof Actor))
-            actors.add(getGrid().get(new Location(getLocation().getRow()+1,getLocation().getCol()+1)));
-        //calc downright
-        if ((getGrid().get(new Location(getLocation().getRow()+1,getLocation().getCol()-1)) instanceof Actor))
-            actors.add(getGrid().get(new Location(getLocation().getRow()+1,getLocation().getCol()-1)));
+
+        int x = getLocation().getCol();
+        int y = getLocation().getRow();
+        while(x != 0 && y != 0){
+            x--;
+            y--;
+            Location n = new Location(y,x);
+            if(getGrid().get(n) instanceof Actor){
+                actors.add(getGrid().get(n));
+            }
+        }
+        x = getLocation().getCol();
+        y = getLocation().getRow();
+        while(x != 0 && y != getGrid().getNumRows()){
+            x--;
+            y++;
+            Location n = new Location(y,x);
+            if(getGrid().get(n) instanceof Actor){
+                actors.add(getGrid().get(n));
+            }
+        }
+        x = getLocation().getCol();
+        y = getLocation().getRow();
+        while(x != getGrid().getNumCols() && y != getGrid().getNumRows()){
+            x++;
+            y++;
+            Location n = new Location(y,x);
+            if(getGrid().get(n) instanceof Actor){
+                actors.add(getGrid().get(n));
+            }
+        }
+        x = getLocation().getCol();
+        y = getLocation().getRow();
+        while(x != getGrid().getNumCols() && y != 0){
+            x++;
+            y--;
+            Location n = new Location(y,x);
+            if(getGrid().get(n) instanceof Actor){
+                actors.add(getGrid().get(n));
+            }
+        }
+
+
         return actors;
 
     }
