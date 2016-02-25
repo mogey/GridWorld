@@ -20,8 +20,10 @@ public class DiagonalChameleonCritter extends ChameleonCritter2{
             x--;
             y--;
             Location n = new Location(y,x);
-            if(getGrid().get(n) instanceof Actor){
-                actors.add(getGrid().get(n));
+            if(getGrid().isValid(n)){
+                if(getGrid().get(n) instanceof Actor){
+                    actors.add(getGrid().get(n));
+                }
             }
         }
         x = getLocation().getCol();
@@ -30,8 +32,10 @@ public class DiagonalChameleonCritter extends ChameleonCritter2{
             x--;
             y++;
             Location n = new Location(y,x);
-            if(getGrid().get(n) instanceof Actor){
-                actors.add(getGrid().get(n));
+            if(getGrid().isValid(n)){
+                if(getGrid().get(n) instanceof Actor){
+                    actors.add(getGrid().get(n));
+                }
             }
         }
         x = getLocation().getCol();
@@ -40,8 +44,10 @@ public class DiagonalChameleonCritter extends ChameleonCritter2{
             x++;
             y++;
             Location n = new Location(y,x);
-            if(getGrid().get(n) instanceof Actor){
-                actors.add(getGrid().get(n));
+            if(getGrid().isValid(n)){
+                if(getGrid().get(n) instanceof Actor){
+                    actors.add(getGrid().get(n));
+                }
             }
         }
         x = getLocation().getCol();
@@ -50,8 +56,10 @@ public class DiagonalChameleonCritter extends ChameleonCritter2{
             x++;
             y--;
             Location n = new Location(y,x);
-            if(getGrid().get(n) instanceof Actor){
-                actors.add(getGrid().get(n));
+            if(getGrid().isValid(n)){
+                if(getGrid().get(n) instanceof Actor){
+                    actors.add(getGrid().get(n));
+                }
             }
         }
 

@@ -14,8 +14,7 @@ public class BullyChameleonCritter extends ChameleonCritter2 {
     public void processActors(ArrayList<Actor> actors){
         for (Actor a : actors)
         {
-            if (a instanceof Critter)
-                a.setColor(getColor());
+            a.setColor(getColor());
         }
     }
 }

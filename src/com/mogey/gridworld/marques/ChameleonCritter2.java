@@ -13,12 +13,10 @@ import java.util.ArrayList;
 public class ChameleonCritter2 extends Critter {
     @Override
     public void processActors(ArrayList<Actor> actors){
-        for (Actor a : actors)
-        {if(a instanceof Actor) {
-            if (!(a instanceof Rock) && !(a instanceof Critter))
+        for (Actor a : actors) {
+            if (a instanceof Actor) {
                 setColor(a.getColor());
+            }
         }
-        }
-        setColor(getColor().darker());
     }
 }
