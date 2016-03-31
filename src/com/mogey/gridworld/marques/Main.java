@@ -16,10 +16,15 @@
  * @author Barbara Cloud Wells
  */
 package com.mogey.gridworld.marques;
+import com.mogey.gridworld.marques.CYO.Boss;
+import com.mogey.gridworld.marques.CYO.Player;
+import com.mogey.gridworld.marques.FlowerGame.FlowerCritter;
 import info.gridworld.actor.Actor;
 import info.gridworld.actor.ActorWorld;
 import info.gridworld.actor.Critter;
 import info.gridworld.actor.Rock;
+import info.gridworld.grid.AbstractGrid;
+import info.gridworld.grid.BoundedGrid;
 import info.gridworld.grid.Location;
 
 import java.awt.*;
@@ -32,13 +37,17 @@ public class Main
 {
     public static void main(String[] args)
     {
-        ActorWorld world = new ActorWorld();
-        world.add(new Location(5,5),new DiagonalChameleonCritter());
-        world.add(new Location(4,4), new Rock(Color.RED));
-        world.add(new Location(6,4), new Rock(Color.black));
-        world.add(new Location(6,6), new Rock(Color.green));
-        world.add(new Location(4,6), new Rock(Color.magenta));
-
+        ActorWorld world = new ActorWorld();/*
+        world.add(new Location(3,1),new Player());
+        world.add(new Location(3,5), new Boss());
+        world.setMessage("Type commands into the console to play, click step and do not use run.");
+        System.out.print("\f");*/
+        world.add(new Location(0,0), new FlowerCritter(world));
         world.show();
+
+
+
+
+
     }
 }
