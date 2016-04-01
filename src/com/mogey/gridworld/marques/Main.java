@@ -19,10 +19,7 @@ package com.mogey.gridworld.marques;
 import com.mogey.gridworld.marques.CYO.Boss;
 import com.mogey.gridworld.marques.CYO.Player;
 import com.mogey.gridworld.marques.FlowerGame.FlowerCritter;
-import info.gridworld.actor.Actor;
-import info.gridworld.actor.ActorWorld;
-import info.gridworld.actor.Critter;
-import info.gridworld.actor.Rock;
+import info.gridworld.actor.*;
 import info.gridworld.grid.AbstractGrid;
 import info.gridworld.grid.BoundedGrid;
 import info.gridworld.grid.Location;
@@ -43,11 +40,13 @@ public class Main
         world.setMessage("Type commands into the console to play, click step and do not use run.");
         System.out.print("\f");*/
         world.add(new Location(0,0), new FlowerCritter(world));
+        for(int i = 0; i <= 25; i++){
+            world.add(new Rock());
+        }
+        for(int i = 0; i < 6; i++){
+            world.add(new Bug());
+        }
         world.show();
-
-
-
-
 
     }
 }

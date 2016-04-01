@@ -1,9 +1,6 @@
 package com.mogey.gridworld.marques.FlowerGame;
 
-import info.gridworld.actor.Actor;
-import info.gridworld.actor.ActorWorld;
-import info.gridworld.actor.Critter;
-import info.gridworld.actor.Flower;
+import info.gridworld.actor.*;
 import info.gridworld.grid.Location;
 import org.omg.PortableInterceptor.LOCATION_FORWARD;
 
@@ -16,7 +13,6 @@ import java.util.concurrent.LinkedBlockingQueue;
  */
 public class FlowerCritter extends Critter {
     ActorWorld world;
-
     public FlowerCritter(ActorWorld world) {
         this.world = world;
     }
@@ -30,10 +26,27 @@ public class FlowerCritter extends Critter {
         ArrayList<Location> moveLocs = getMoveLocations();
         Location loc = selectMoveLocation(moveLocs);
         makeMove(loc);*/
-        Queue<Location> path = findPath(getLocation(), new Location(7, 4));
-        makeMove(path.poll());
+        move(new Location(7,4));
     }
-
+    public void move(Location goal){
+        ArrayList<Location> locs = new ArrayList<Location>();
+        HashMap<Location,Integer> costs = new HashMap<Location,Integer>();
+        for(Location next : getGrid().getValidAdjacentLocations(getLocation())){
+            costs.put(next, distBetween(next,goal));
+            locs.add(next);
+        }
+        Location s = locs.get(0);
+        for(Location l : locs){
+            if(costs.get(l) < costs.get(s)){
+                s = l;
+            }
+        }
+        if (s == null)
+            removeSelfFromGrid();
+        else
+            setDirection(getLocation().getDirectionToward(s));
+            moveTo(s);
+    }
     /*
     Create a 'frontier'
     add ourselves to the frontier
@@ -44,21 +57,15 @@ public class FlowerCritter extends Critter {
     for each neighbor of our location check if visitted
     if not visitted put it in frontier
     and set it visitted
-     */
-    private Queue findPath(Location start, Location goal) {
+     *//*
+    private Queue findPath(Location start, Location goal) {/*
         HashSet<Location> open = new HashSet<Location>();
         open.add(getLocation());
 
-        HashSet<Location> closed = new HashSet<Location>();
-
         Map<Location, Location> cameFrom = new HashMap<Location, Location>();
-
-        Map<Location, Integer> fScore = new HashMap<Location, Integer>(); //h + g
-        fScore.put(start, distBetween(start, goal));
-
-        Map<Location, Integer> gScore = new HashMap<Location, Integer>(); //cost from start to here
-        gScore.put(start, 0);
-
+        cameFrom.put(start,null);
+        Map<Location, Integer> cost = new HashMap<Location, Integer>();
+        cost.put(start,0);
 
         while (!open.isEmpty()) {
             Location current = findSmallest(open, fScore);
@@ -81,37 +88,23 @@ public class FlowerCritter extends Critter {
                 fScore.put(next,gScore.get(next) + distBetween(next,goal));
             }
         }
+
         Queue<Location> path = new LinkedList<Location>();
         Location current = start;
         while(cameFrom.containsKey(current)){
             path.add(cameFrom.get(current));
         }
         return path;
-    }
-
-    private Location findSmallest(HashSet a, Map f) {
-        Iterator<Location> i = a.iterator();
-        Location s = i.next();
-        while (i.hasNext()) {
-            if ((Integer) f.get((Location) i.next()) < (Integer) f.get((Location) s)) {
-                s = i.next();
-            }
-        }
-        return s;
-    }
-
+    }*/
     private int distBetween(Location a, Location b) {
-        return (Math.abs(a.getCol() - b.getCol()) + Math.abs(a.getRow() - b.getRow()));
-    }
-
-    private class gScoreComparator implements Comparator<Integer> {
-        public gScoreComparator() {
-
+        int h = 0;
+        if(getGrid().get(a) instanceof Rock){
+            h+=20;
         }
-
-        public int compare(Integer a, Integer b) {
-            return 0;
+        if(getGrid().get(a) != null){
+            h++;
         }
+        return (Math.abs(a.getCol() - b.getCol()) + Math.abs(a.getRow() - b.getRow()) + h);
     }
 
 
