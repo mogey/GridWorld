@@ -5,7 +5,7 @@ package com.mogey.gridworld.marques.DataStructures;
  */
 public class test {
     public static void main(String[] args){
-        SortedNoNegLinkedList a = new SortedNoNegLinkedList();
+        SortedNoNegDoublyLinkedList a = new SortedNoNegDoublyLinkedList();
         a.add(4);
         a.add(8);
         a.add(5);

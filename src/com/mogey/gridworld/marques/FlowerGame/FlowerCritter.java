@@ -87,7 +87,7 @@ public class FlowerCritter extends Critter {
             }
         }
 
-        Queue<Location> path = new SortedNoNegLinkedList<Location>();
+        Queue<Location> path = new SortedNoNegSinglyLinkedList<Location>();
         Location current = start;
         while(cameFrom.containsKey(current)){
             path.add(cameFrom.get(current));

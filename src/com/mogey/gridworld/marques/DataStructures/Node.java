@@ -5,14 +5,19 @@ package com.mogey.gridworld.marques.DataStructures;
  */
 public class Node {
     private Node next;
+    private Node prev;
+
+    public Node getPrev() {
+        return prev;
+    }
+
+    public void setPrev(Node prev) {
+        this.prev = prev;
+    }
+
     private int data;
 
     public Node(int data) {
-        this.data = data;
-    }
-
-    public Node(Node next, int data) {
-        this.next = next;
         this.data = data;
     }
 
@@ -34,6 +39,6 @@ public class Node {
 
     @Override
     public String toString() {
-        return "Node:{" +  "ID=("+this.hashCode()+")" + "\nData:" + data + "\nNext:\n\n" + next + "}\n";
+        return "Node:{" +  "ID=("+this.hashCode()+")" + "\nData:" + data + "\nNext:\n\n(" + next + ")}\n";
     }
 }
