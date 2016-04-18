@@ -25,6 +25,7 @@ import info.gridworld.grid.BoundedGrid;
 import info.gridworld.grid.Location;
 
 import java.awt.*;
+import java.util.LinkedList;
 
 /**
  * This class runs a world that contains box bugs. <br />
@@ -32,8 +33,8 @@ import java.awt.*;
  */
 public class Main
 {
-    public static void main(String[] args)
-    {
+    public static void main(String[] args){
+
         ActorWorld world = new ActorWorld();/*
         world.add(new Location(3,1),new Player());
         world.add(new Location(3,5), new Boss());

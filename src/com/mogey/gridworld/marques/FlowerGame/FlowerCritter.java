@@ -2,11 +2,9 @@ package com.mogey.gridworld.marques.FlowerGame;
 
 import info.gridworld.actor.*;
 import info.gridworld.grid.Location;
-import org.omg.PortableInterceptor.LOCATION_FORWARD;
 
 import java.util.*;
-import java.util.concurrent.BlockingDeque;
-import java.util.concurrent.LinkedBlockingQueue;
+
 
 /**
  * Created by mqureshi16 on 3/24/2016.
@@ -57,8 +55,8 @@ public class FlowerCritter extends Critter {
     for each neighbor of our location check if visitted
     if not visitted put it in frontier
     and set it visitted
-     *//*
-    private Queue findPath(Location start, Location goal) {/*
+
+    private Queue findPath(Location start, Location goal) {
         HashSet<Location> open = new HashSet<Location>();
         open.add(getLocation());
 
@@ -89,7 +87,7 @@ public class FlowerCritter extends Critter {
             }
         }
 
-        Queue<Location> path = new LinkedList<Location>();
+        Queue<Location> path = new SortedNoNegLinkedList<Location>();
         Location current = start;
         while(cameFrom.containsKey(current)){
             path.add(cameFrom.get(current));
